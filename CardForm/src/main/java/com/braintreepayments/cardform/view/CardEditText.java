@@ -44,7 +44,7 @@ public class CardEditText extends ErrorEditText implements TextWatcher {
 
     private void init() {
         setInputType(InputType.TYPE_CLASS_NUMBER);
-        setCardIcon(R.drawable.bt_ic_unknown);
+        //setCardIcon(R.drawable.bt_ic_unknown);
         addTextChangedListener(this);
         updateCardType();
     }

@@ -11,7 +11,7 @@
     <style name="bt_field_container">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">horizontal</item>
+        <item name="android:orientation">vertical</item>
         <item name="android:baselineAligned">false</item>
     </style>
 
@@ -22,15 +22,16 @@
     <style name="bt_text_input_layout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">12dp</item>
         <item name="android:accessibilityLiveRegion" tools:targetApi="kitkat">polite</item>
     </style>
 
     <style name="bt_card_form_field" parent="bt_base_textview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">60dp</item>
-        <item name="android:paddingTop">@dimen/bt_margin</item>
         <item name="android:textColorHint">@color/bt_light_gray</item>
+        <item name="android:background">@drawable/bt_bg_edit_text_rounded</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
         <item name="android:textCursorDrawable" tools:ignore="NewApi">@null</item>
     </style>
 
