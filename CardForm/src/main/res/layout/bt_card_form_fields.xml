@@ -88,7 +88,7 @@
                 android:id="@+id/bt_card_form_expiration"
                 style="@style/bt_card_form_field"
                 android:contentDescription="@string/bt_form_hint_expiration"
-                android:hint="expiration" />
+                android:hint="mm / yyyy" />
 
         </android.support.design.widget.TextInputLayout>
 
