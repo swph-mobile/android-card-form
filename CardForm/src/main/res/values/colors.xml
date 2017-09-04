@@ -17,4 +17,7 @@
     <color name="bt_bg_edit_text_default">#ECECEC</color>
     <color name="bt_bg_edit_text_focused">#009BEC</color>
     <color name="bt_ripple">#DBE1EA</color>
+    <color name="bt_gray_active_field_text">#616161</color>
+    <color name="bt_gray_inactive_field_text">#D0D0D0</color>
+
 </resources>

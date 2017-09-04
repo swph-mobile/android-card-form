@@ -18,6 +18,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="bottom"
+                android:textColor="@color/bt_gray_active_field_text"
                 android:text="@string/bt_form_hint_card_number" />
 
             <com.braintreepayments.cardform.view.SupportedCardTypesView
@@ -75,6 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
+            android:textColor="@color/bt_gray_active_field_text"
             android:text="@string/bt_form_hint_expiration" />
 
 
@@ -101,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="20dp"
+            android:textColor="@color/bt_gray_active_field_text"
             android:text="@string/bt_form_hint_cvv" />
 
         <android.support.design.widget.TextInputLayout
