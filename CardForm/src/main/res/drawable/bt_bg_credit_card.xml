@@ -10,7 +10,7 @@
                 android:color="@color/bt_bg_edit_text_default" />
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_credit_card"
+    <item android:drawable="@drawable/bt_ic_credit_card"
         android:top="10dp"
         android:left="10dp"
         android:right="10dp"

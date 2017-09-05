@@ -25,6 +25,7 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.braintreepayments.cardform.CardScanningFragment;
 import com.braintreepayments.cardform.OnCardFormFieldFocusedListener;
+import com.braintreepayments.cardform.OnCardFormScanListener;
 import com.braintreepayments.cardform.OnCardFormSubmitListener;
 import com.braintreepayments.cardform.OnCardFormValidListener;
 import com.braintreepayments.cardform.R;
@@ -73,6 +74,7 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     private OnCardFormSubmitListener mOnCardFormSubmitListener;
     private OnCardFormFieldFocusedListener mOnCardFormFieldFocusedListener;
     private OnCardTypeChangedListener mOnCardTypeChangedListener;
+    private OnCardFormScanListener mOnCardFormScanListener;
 
     public CardForm(Context context) {
         super(context);
@@ -298,6 +300,8 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
             if (mCardNumberRequired) {
                 mCardNumber.setText(scanResult.cardNumber);
                 mCardNumber.focusNextView();
+
+                mOnCardFormScanListener.onCardFormScan();
             }
 
             if (scanResult.isExpiryValid() && mExpirationRequired) {
@@ -346,6 +350,16 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
      */
     public void setOnCardFormSubmitListener(OnCardFormSubmitListener listener) {
         mOnCardFormSubmitListener = listener;
+    }
+
+    /**
+     * Set the listener to receive a callback when the card scanning is successful.
+     * Triggered by successful card scanning event.
+     *
+     * @param listener to receive the callback
+     */
+    public void setOnCardFormScanListener(OnCardFormScanListener listener) {
+        mOnCardFormScanListener = listener;
     }
 
     /**
