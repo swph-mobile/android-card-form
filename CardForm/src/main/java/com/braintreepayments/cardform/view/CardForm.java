@@ -4,6 +4,8 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION_CODES;
 import android.support.annotation.DrawableRes;
 import android.support.design.widget.TextInputEditText;
@@ -18,6 +20,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -60,6 +63,8 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     private CountryCodeEditText mCountryCode;
     private MobileNumberEditText mMobileNumber;
     private TextView mMobileNumberExplanation;
+    private ImageButton mCamera;
+    private int color;
 
     private boolean mCardNumberRequired;
     private boolean mExpirationRequired;
@@ -114,6 +119,7 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         mMobileNumber = (MobileNumberEditText) findViewById(R.id.bt_card_form_mobile_number);
         mMobileNumberExplanation = (TextView) findViewById(R.id.bt_card_form_mobile_number_explanation);
         mSupportedCardTypesView = (SupportedCardTypesView) findViewById(R.id.supported_card_types);
+        mCamera = (ImageButton) findViewById(R.id.bt_camera);
         mSupportedCardTypesView.setSupportedCardTypes(SUPPORTED_CARD_TYPES);
 
         mVisibleEditTexts = new ArrayList<>();
@@ -680,4 +686,16 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+    public void setCameraIcon(Drawable drawable){
+        mCamera.setImageDrawable(drawable);
+    }
+
+    public void setToolbarColor(int color) {
+        this.color = color;
+    }
+
+    public int getToolbarColor() {
+        return color;
+    }
 }

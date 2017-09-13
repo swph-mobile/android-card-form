@@ -3,6 +3,7 @@ package com.braintreepayments.cardform;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import com.braintreepayments.cardform.utils.ColorUtils;
@@ -49,7 +50,8 @@ public class CardScanningFragment extends Fragment {
                 .putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, false)
                 .putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false)
                 .putExtra(CardIOActivity.EXTRA_GUIDE_COLOR,
-                        getResources().getColor(R.color.bt_white));
+                        getResources().getColor(R.color.bt_white))
+                .putExtra(CardIOActivity.EXTRA_TOOLBAR_COLOR, mCardForm.getToolbarColor());
 
         startActivityForResult(scanIntent, CARD_IO_REQUEST_CODE);
     }
