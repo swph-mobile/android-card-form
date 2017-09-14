@@ -687,6 +687,10 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
+    public void setCameraBackground(Drawable drawable) {
+        mCamera.setBackground(drawable);
+    }
+
     public void setCameraIcon(Drawable drawable){
         mCamera.setImageDrawable(drawable);
     }
