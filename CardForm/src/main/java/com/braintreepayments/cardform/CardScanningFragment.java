@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.braintreepayments.cardform.utils.ColorUtils;
 import com.braintreepayments.cardform.view.CardForm;
@@ -42,18 +43,20 @@ public class CardScanningFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
 
-        Intent scanIntent = new Intent(getActivity(), CardIOActivity.class)
-                .putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, true)
-                .putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, false)
-                .putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, true)
-                .putExtra(CardIOActivity.EXTRA_SCAN_EXPIRY, true)
-                .putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, false)
-                .putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false)
-                .putExtra(CardIOActivity.EXTRA_GUIDE_COLOR,
-                        getResources().getColor(R.color.bt_white))
-                .putExtra(CardIOActivity.EXTRA_TOOLBAR_COLOR, mCardForm.getToolbarColor());
+        if (mCardForm!=null){
+            Intent scanIntent = new Intent(getActivity(), CardIOActivity.class)
+                    .putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, true)
+                    .putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, false)
+                    .putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, true)
+                    .putExtra(CardIOActivity.EXTRA_SCAN_EXPIRY, true)
+                    .putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, false)
+                    .putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false)
+                    .putExtra(CardIOActivity.EXTRA_GUIDE_COLOR,
+                            getResources().getColor(R.color.bt_white))
+                    .putExtra(CardIOActivity.EXTRA_TOOLBAR_COLOR, mCardForm.getToolbarColor());
 
-        startActivityForResult(scanIntent, CARD_IO_REQUEST_CODE);
+            startActivityForResult(scanIntent, CARD_IO_REQUEST_CODE);
+        }
     }
 
     @Override
