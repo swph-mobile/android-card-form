@@ -43,7 +43,7 @@ public class CardScanningFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setRetainInstance(true);
 
-        if (mCardForm!=null){
+       if (mCardForm != null) {
             Intent scanIntent = new Intent(getActivity(), CardIOActivity.class)
                     .putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, true)
                     .putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, false)
@@ -57,6 +57,7 @@ public class CardScanningFragment extends Fragment {
 
             startActivityForResult(scanIntent, CARD_IO_REQUEST_CODE);
         }
+
     }
 
     @Override
