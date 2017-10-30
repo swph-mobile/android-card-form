@@ -702,4 +702,10 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     public int getToolbarColor() {
         return color;
     }
+
+    public void setEditTextDrawable(Drawable drawable) {
+        getCardEditText().setBackground(drawable);
+        getCvvEditText().setBackground(drawable);
+        getExpirationDateEditText().setBackground(drawable);
+    }
 }
