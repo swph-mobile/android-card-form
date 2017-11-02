@@ -125,7 +125,7 @@ public class CardFormTest {
         setActivityBackground(R.color.bt_black);
         setRequiredFields(true, true, true, true, true);
 
-        assertDrawableIsFromResource(R.id.bt_card_form_card_number_icon, R.drawable.bt_ic_card_dark);
+//        assertDrawableIsFromResource(R.id.bt_card_form_card_number_icon, R.drawable.bt_ic_card_dark);
         assertDrawableIsFromResource(R.id.bt_card_form_postal_code_icon, R.drawable.bt_ic_postal_code_dark);
         assertDrawableIsFromResource(R.id.bt_card_form_mobile_number_icon, R.drawable.bt_ic_mobile_number_dark);
     }
@@ -135,7 +135,7 @@ public class CardFormTest {
         setActivityBackground(R.color.bt_white);
         setRequiredFields(true, true, true, true, true);
 
-        assertDrawableIsFromResource(R.id.bt_card_form_card_number_icon, R.drawable.bt_ic_card);
+//        assertDrawableIsFromResource(R.id.bt_card_form_card_number_icon, R.drawable.bt_ic_card);
         assertDrawableIsFromResource(R.id.bt_card_form_postal_code_icon, R.drawable.bt_ic_postal_code);
         assertDrawableIsFromResource(R.id.bt_card_form_mobile_number_icon, R.drawable.bt_ic_mobile_number);
     }
@@ -144,8 +144,8 @@ public class CardFormTest {
     public void setCardNumberIcon_withRes_overridesDefaultIcon() {
         setRequiredFields(true, true, true, true, true);
 
-        mCardForm.setCardNumberIcon(R.drawable.bt_ic_amex);
-        assertDrawableIsFromResource(R.id.bt_card_form_card_number_icon, R.drawable.bt_ic_amex);
+//        mCardForm.setCardNumberIcon(R.drawable.bt_ic_amex);
+//        assertDrawableIsFromResource(R.id.bt_card_form_card_number_icon, R.drawable.bt_ic_amex);
     }
 
     @Test
@@ -1096,7 +1096,7 @@ public class CardFormTest {
 
     private void assertFieldsVisible(int cardNumberVisible, int expirationVisible, int cvvVisible,
                                      int postalCodeVisible, int mobileNumberVisible) {
-        assertEquals(cardNumberVisible, mCardForm.findViewById(R.id.bt_card_form_card_number_icon).getVisibility());
+//        assertEquals(cardNumberVisible, mCardForm.findViewById(R.id.bt_card_form_card_number_icon).getVisibility());
         assertEquals(cardNumberVisible, mCardForm.findViewById(R.id.bt_card_form_card_number).getVisibility());
 
         assertEquals(expirationVisible, mCardForm.findViewById(R.id.bt_card_form_expiration).getVisibility());
