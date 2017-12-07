@@ -6,12 +6,12 @@ apply plugin: 'io.codearte.nexus-staging'
 version '3.1.0'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 35
         versionName version
 
@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:design:26.0.0'
+    compile "com.android.support:design:$rootProject.supportLibrary"
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:3.3'
