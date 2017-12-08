@@ -4,7 +4,6 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION_CODES;
 import android.support.annotation.DrawableRes;
@@ -80,6 +79,8 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     private OnCardFormFieldFocusedListener mOnCardFormFieldFocusedListener;
     private OnCardTypeChangedListener mOnCardTypeChangedListener;
     private OnCardFormScanListener mOnCardFormScanListener;
+
+    private int editableDrawableId;
 
     public CardForm(Context context) {
         super(context);
@@ -317,8 +318,13 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         }
     }
 
-    private void setListeners(EditText editText) {
-        editText.setOnFocusChangeListener(this);
+    private void setListeners(final EditText editText) {
+        editText.setOnFocusChangeListener(new OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                editText.setBackground(editText.getContext().getDrawable(editableDrawableId));
+            }
+        });
         editText.setOnClickListener(this);
         editText.addTextChangedListener(this);
     }
@@ -703,7 +709,8 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         return color;
     }
 
-    public void setEditTextDrawable(Drawable drawable) {
+    public void setEditTextDrawable(Drawable drawable, int drawableId) {
+        editableDrawableId = drawableId;
         getCardEditText().setBackground(drawable);
         getCvvEditText().setBackground(drawable);
         getExpirationDateEditText().setBackground(drawable);
