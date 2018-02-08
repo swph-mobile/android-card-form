@@ -715,4 +715,8 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         getCvvEditText().setBackground(drawable);
         getExpirationDateEditText().setBackground(drawable);
     }
+
+    public void setCameraVisibility(int visibility) {
+        mCamera.setVisibility(visibility);
+    }
 }
