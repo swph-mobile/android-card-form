@@ -180,7 +180,7 @@ public class ExpirationDateEditText extends ErrorEditText implements TextWatcher
 
         if (((getSelectionStart() == 4 && !editable.toString().endsWith("20")) || getSelectionStart() == 6)
                 && isValid()) {
-            focusNextView();
+//            focusNextView();
         }
     }
 

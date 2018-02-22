@@ -71,7 +71,7 @@ public class CvvEditText extends ErrorEditText implements TextWatcher {
             validate();
 
             if (isValid()) {
-                focusNextView();
+//                focusNextView();
             }
         }
     }

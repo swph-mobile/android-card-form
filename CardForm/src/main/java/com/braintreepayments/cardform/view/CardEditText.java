@@ -97,7 +97,7 @@ public class CardEditText extends ErrorEditText implements TextWatcher {
             validate();
 
             if (isValid()) {
-                focusNextView();
+//                focusNextView();
             }
         }
     }

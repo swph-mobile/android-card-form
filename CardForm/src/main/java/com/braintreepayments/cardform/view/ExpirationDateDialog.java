@@ -188,16 +188,17 @@ public class ExpirationDateDialog extends Dialog implements DialogInterface.OnSh
         mEditText.setText(expirationDate);
 
         if (mHasSelectedMonth && mHasSelectedYear) {
-            final View focusedView = mEditText.focusNextView();
-            if (focusedView != null) {
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE))
-                                .showSoftInput(focusedView, 0);
-                    }
-                }, mAnimationDelay);
-            }
+//            final View focusedView = mEditText.focusNextView();
+//            if (focusedView != null) {
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE))
+//                                .showSoftInput(focusedView, 0);
+//                    }
+//                }, mAnimationDelay);
+//            }
+            dismiss();
         }
     }
 

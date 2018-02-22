@@ -306,14 +306,14 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
 
             if (mCardNumberRequired) {
                 mCardNumber.setText(scanResult.cardNumber);
-                mCardNumber.focusNextView();
+//                mCardNumber.focusNextView();
 
                 mOnCardFormScanListener.onCardFormScan();
             }
 
             if (scanResult.isExpiryValid() && mExpirationRequired) {
                 mExpiration.setText(Integer.toString(scanResult.expiryMonth) + Integer.toString(scanResult.expiryYear));
-                mExpiration.focusNextView();
+//                mExpiration.focusNextView();
             }
         }
     }
@@ -575,7 +575,7 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     }
 
     private void requestEditTextFocus(EditText editText) {
-        editText.requestFocus();
+//        editText.requestFocus();
         ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE))
                 .showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
     }
