@@ -37,8 +37,9 @@ public enum ExpirationDateDialogTheme {
                 "textColorPrimaryInverse", theme.mItemInverseTextColor);
         theme.mResolvedItemDisabledTextColor = activity.getResources()
                 .getColor(theme.mItemDisabledTextColor);
-        theme.mResolvedSelectedItemBackground = ColorUtils.getColor(activity, "colorAccent",
-                R.color.bt_blue);
+
+        //removed color accent to being resolved as the selected item background
+        theme.mResolvedSelectedItemBackground = ColorUtils.getColor(activity, "", R.color.bt_blue);
 
         return theme;
     }
