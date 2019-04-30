@@ -35,7 +35,7 @@
             android:layout_height="60dp"
             android:orientation="horizontal">
 
-            <android.support.design.widget.TextInputLayout
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layout"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
                     android:hint="@string/bt_form_hint_card_number"
                     android:inputType="number" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:id="@+id/bt_camera_layout"
@@ -89,7 +89,7 @@
             android:text="@string/bt_form_hint_expiration" />
 
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/bt_text_input_layout"
             android:layout_weight="0.15"
             android:labelFor="@+id/bt_card_form_expiration"
@@ -101,7 +101,7 @@
                 android:contentDescription="@string/bt_form_hint_expiration"
                 android:hint="mm / yyyy" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -115,7 +115,7 @@
             android:textColor="@color/bt_gray_active_field_text"
             android:text="@string/bt_form_hint_cvv" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/bt_text_input_layout"
             android:labelFor="@+id/bt_card_form_cvv"
             app:hintEnabled="false">
@@ -126,7 +126,7 @@
                 android:contentDescription="@string/bt_form_hint_cvv"
                 android:hint="@string/bt_form_hint_cvv" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -139,7 +139,7 @@
             style="@style/bt_card_form_icon"
             tools:ignore="ContentDescription" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/bt_text_input_layout"
             android:labelFor="@+id/bt_card_form_postal_code"
             android:paddingEnd="0dp"
@@ -153,7 +153,7 @@
                 android:contentDescription="@string/bt_form_hint_postal_code"
                 android:hint="@string/bt_form_hint_postal_code" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -166,7 +166,7 @@
             style="@style/bt_card_form_icon"
             tools:ignore="ContentDescription" />
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/bt_text_input_layout"
             android:layout_width="0dp"
             android:layout_weight="2"
@@ -182,9 +182,9 @@
                 android:contentDescription="@string/bt_form_hint_country_code"
                 android:hint="@string/bt_form_hint_country_code" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/bt_text_input_layout"
             android:layout_width="0dp"
             android:layout_weight="3"
@@ -196,7 +196,7 @@
                 android:contentDescription="@string/bt_form_hint_mobile_number"
                 android:hint="@string/bt_form_hint_mobile_number" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
