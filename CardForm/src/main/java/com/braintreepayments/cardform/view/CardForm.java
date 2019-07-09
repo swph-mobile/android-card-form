@@ -47,12 +47,8 @@ import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 public class CardForm extends LinearLayout implements OnCardTypeChangedListener, OnFocusChangeListener, OnClickListener,
         OnEditorActionListener, TextWatcher {
 
-    private static final CardType[] SUPPORTED_CARD_TYPES = {CardType.AMEX, CardType.MASTERCARD, CardType.VISA, CardType.DISCOVER};
-    private SupportedCardTypesView mSupportedCardTypesView;
-
     private List<ErrorEditText> mVisibleEditTexts;
 
-    //    private ImageView mCardNumberIcon;
     private CardEditText mCardNumber;
     private ExpirationDateEditText mExpiration;
     private CvvEditText mCvv;
@@ -62,7 +58,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     private CountryCodeEditText mCountryCode;
     private MobileNumberEditText mMobileNumber;
     private TextView mMobileNumberExplanation;
-    private ImageButton mCamera;
     private int color;
 
     private boolean mCardNumberRequired;
@@ -109,7 +104,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
 
         inflate(getContext(), R.layout.bt_card_form_fields, this);
 
-//        mCardNumberIcon = (ImageView) findViewById(R.id.bt_card_form_card_number_icon);
         mCardNumber = (CardEditText) findViewById(R.id.bt_card_form_card_number);
         mExpiration = (ExpirationDateEditText) findViewById(R.id.bt_card_form_expiration);
         mCvv = (CvvEditText) findViewById(R.id.bt_card_form_cvv);
@@ -119,9 +113,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         mCountryCode = (CountryCodeEditText) findViewById(R.id.bt_card_form_country_code);
         mMobileNumber = (MobileNumberEditText) findViewById(R.id.bt_card_form_mobile_number);
         mMobileNumberExplanation = (TextView) findViewById(R.id.bt_card_form_mobile_number_explanation);
-        mSupportedCardTypesView = (SupportedCardTypesView) findViewById(R.id.supported_card_types);
-        mCamera = (ImageButton) findViewById(R.id.bt_camera);
-        mSupportedCardTypesView.setSupportedCardTypes(SUPPORTED_CARD_TYPES);
 
         mVisibleEditTexts = new ArrayList<>();
 
@@ -211,13 +202,11 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         }
 
         boolean isDarkBackground = ViewUtils.isDarkBackground(activity);
-//        mCardNumberIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_card_dark : R.drawable.bt_ic_card);
         mPostalCodeIcon.setImageResource(isDarkBackground ? R.drawable.bt_ic_postal_code_dark : R.drawable.bt_ic_postal_code);
         mMobileNumberIcon.setImageResource(isDarkBackground? R.drawable.bt_ic_mobile_number_dark : R.drawable.bt_ic_mobile_number);
 
         mExpiration.setActivity(activity);
 
-//        setViewVisibility(mCardNumberIcon, mCardNumberRequired);
         setFieldVisibility(mCardNumber, mCardNumberRequired);
         setFieldVisibility(mExpiration, mExpirationRequired);
         setFieldVisibility(mCvv, mCvvRequired);
@@ -244,15 +233,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
 
         setVisibility(VISIBLE);
     }
-
-    /**
-     * Sets the icon to the left of the card number entry field, overriding the default icon.
-     *
-     * @param res The drawable resource for the card number icon
-     */
-//    public void setCardNumberIcon(@DrawableRes int res) {
-//        mCardNumberIcon.setImageResource(res);
-//    }
 
     /**
      * Sets the icon to the left of the postal code entry field, overriding the default icon.
@@ -319,12 +299,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     }
 
     private void setListeners(final EditText editText) {
-        editText.setOnFocusChangeListener(new OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                editText.setBackground(editText.getContext().getDrawable(editableDrawableId));
-            }
-        });
         editText.setOnClickListener(this);
         editText.addTextChangedListener(this);
     }
@@ -645,12 +619,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         if (mOnCardTypeChangedListener != null) {
             mOnCardTypeChangedListener.onCardTypeChanged(cardType);
         }
-
-        if (cardType == CardType.EMPTY) {
-            mSupportedCardTypesView.setSupportedCardTypes(SUPPORTED_CARD_TYPES);
-        } else {
-            mSupportedCardTypesView.setSelected(cardType);
-        }
     }
 
     @Override
@@ -693,14 +661,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {}
 
-    public void setCameraBackground(Drawable drawable) {
-        mCamera.setBackground(drawable);
-    }
-
-    public void setCameraIcon(Drawable drawable){
-        mCamera.setImageDrawable(drawable);
-    }
-
     public void setToolbarColor(int color) {
         this.color = color;
     }
@@ -714,9 +674,5 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
         getCardEditText().setBackground(drawable);
         getCvvEditText().setBackground(drawable);
         getExpirationDateEditText().setBackground(drawable);
-    }
-
-    public void setCameraVisibility(int visibility) {
-        mCamera.setVisibility(visibility);
     }
 }

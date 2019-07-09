@@ -1,92 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/bt_white">
+
+    <View android:background="@color/bt_black_12"
+        android:layout_height="1dp"
+        android:layout_width="match_parent" />
 
     <LinearLayout style="@style/bt_field_container">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:text="@string/bt_form_hint_card_number"
+            android:textColor="@color/bt_gray_active_field_text" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="bottom"
-                android:textColor="@color/bt_gray_active_field_text"
-                android:text="@string/bt_form_hint_card_number" />
-
-            <com.braintreepayments.cardform.view.SupportedCardTypesView
-                android:id="@+id/supported_card_types"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="end" />
-
-        </LinearLayout>
-
-        <RelativeLayout
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal">
+            android:layout_weight="2"
+            android:labelFor="@+id/bt_card_form_card_number"
+            app:hintEnabled="false"
+            tools:ignore="RtlCompat">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/layout"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginRight="5dp"
-                android:layout_alignParentLeft="true"
-                android:layout_toLeftOf="@+id/bt_camera_layout"
-                android:labelFor="@+id/bt_card_form_card_number"
-                app:hintEnabled="false"
-                tools:ignore="RtlCompat">
+            <com.braintreepayments.cardform.view.CardEditText
+                android:id="@+id/bt_card_form_card_number"
+                style="@style/bt_card_form_field"
+                android:contentDescription="@string/bt_form_hint_card_number"
+                android:hint="@string/bt_form_hint_card_number"
+                android:inputType="number" />
 
-                <com.braintreepayments.cardform.view.CardEditText
-                    android:id="@+id/bt_card_form_card_number"
-                    style="@style/bt_card_form_field"
-                    android:contentDescription="@string/bt_form_hint_card_number"
-                    android:hint="@string/bt_form_hint_card_number"
-                    android:inputType="number" />
-
-            </android.support.design.widget.TextInputLayout>
-
-            <LinearLayout
-                android:id="@+id/bt_camera_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:visibility="visible"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/bt_camera"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bt_bg_edit_text_rounded" />
-
-            </LinearLayout>
-        </RelativeLayout>
-
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
+
+    <View android:background="@color/bt_black_12"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/bt_margin"/>
+
+    <LinearLayout style="@style/bt_field_container">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:text="@string/bt_form_hint_cvv"
+            android:textColor="@color/bt_gray_active_field_text" />
+
+        <android.support.design.widget.TextInputLayout
+            style="@style/bt_text_input_layout"
+            android:labelFor="@+id/bt_card_form_cvv"
+            app:hintEnabled="false">
+
+            <com.braintreepayments.cardform.view.CvvEditText
+                android:id="@+id/bt_card_form_cvv"
+                style="@style/bt_card_form_field"
+                android:contentDescription="@string/bt_form_hint_cvv"
+                android:hint="@string/bt_form_hint_cvv" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <View android:background="@color/bt_black_12"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/bt_margin"/>
 
     <LinearLayout
         style="@style/bt_field_container"
         tools:ignore="RtlCompat">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/bt_gray_active_field_text"
-            android:text="@string/bt_form_hint_expiration" />
+            android:layout_gravity="center_vertical|left"
+            android:text="@string/bt_form_hint_expiration"
+            android:textColor="@color/bt_gray_active_field_text" />
 
 
         <android.support.design.widget.TextInputLayout
@@ -105,30 +103,9 @@
 
     </LinearLayout>
 
-    <LinearLayout style="@style/bt_field_container">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/bt_gray_active_field_text"
-            android:text="@string/bt_form_hint_cvv" />
-
-        <android.support.design.widget.TextInputLayout
-            style="@style/bt_text_input_layout"
-            android:labelFor="@+id/bt_card_form_cvv"
-            app:hintEnabled="false">
-
-            <com.braintreepayments.cardform.view.CvvEditText
-                android:id="@+id/bt_card_form_cvv"
-                style="@style/bt_card_form_field"
-                android:contentDescription="@string/bt_form_hint_cvv"
-                android:hint="@string/bt_form_hint_cvv" />
-
-        </android.support.design.widget.TextInputLayout>
-
-    </LinearLayout>
+    <View android:background="@color/bt_black_12"
+        android:layout_height="1dp"
+        android:layout_width="match_parent" />
 
     <LinearLayout
         style="@style/bt_field_container"
@@ -142,9 +119,9 @@
         <android.support.design.widget.TextInputLayout
             style="@style/bt_text_input_layout"
             android:labelFor="@+id/bt_card_form_postal_code"
-            android:paddingEnd="0dp"
-            android:paddingLeft="@dimen/bt_edit_text_icon_padding"
             android:paddingStart="@dimen/bt_edit_text_icon_padding"
+            android:paddingLeft="@dimen/bt_edit_text_icon_padding"
+            android:paddingEnd="0dp"
             tools:ignore="RtlCompat">
 
             <com.braintreepayments.cardform.view.PostalCodeEditText
@@ -171,9 +148,9 @@
             android:layout_width="0dp"
             android:layout_weight="2"
             android:labelFor="@+id/bt_card_form_country_code"
-            android:paddingEnd="0dp"
-            android:paddingLeft="@dimen/bt_edit_text_icon_padding"
             android:paddingStart="@dimen/bt_edit_text_icon_padding"
+            android:paddingLeft="@dimen/bt_edit_text_icon_padding"
+            android:paddingEnd="0dp"
             tools:ignore="RtlCompat">
 
             <com.braintreepayments.cardform.view.CountryCodeEditText
@@ -205,10 +182,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-8dp"
-        android:paddingEnd="0dp"
-        android:paddingLeft="@dimen/bt_mobile_number_explanation_padding"
         android:paddingStart="@dimen/bt_mobile_number_explanation_padding"
+        android:paddingLeft="@dimen/bt_mobile_number_explanation_padding"
+        android:paddingEnd="0dp"
         android:visibility="gone"
         tools:ignore="RtlCompat" />
 
-</merge>
+</LinearLayout>
