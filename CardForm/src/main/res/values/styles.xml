@@ -11,8 +11,10 @@
     <style name="bt_field_container">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">vertical</item>
+        <item name="android:orientation">horizontal</item>
         <item name="android:baselineAligned">false</item>
+        <item name="android:background">@color/bt_white</item>
+        <item name="android:paddingLeft">16dp</item>
     </style>
 
     <style name="bt_base_textview">
@@ -30,7 +32,8 @@
         <item name="android:layout_height">60dp</item>
         <item name="android:textColor">@color/bt_gray_active_field_text</item>
         <item name="android:textColorHint">@color/bt_gray_inactive_field_text</item>
-        <item name="android:background">@drawable/bt_bg_edit_text_rounded</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/bt_clear</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:textCursorDrawable" tools:ignore="NewApi">@null</item>

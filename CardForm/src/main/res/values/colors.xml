@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bt_clear">#00000000</color>
     <color name="bt_white">#ffffff</color>
     <color name="bt_black">#001129</color>
     <color name="bt_blue">#009bde</color>
