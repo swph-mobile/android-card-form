@@ -35,12 +35,12 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:design:$rootProject.supportLibrary"
+    implementation "com.google.android.material:material:1.0.0"
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.3'
-    testCompile 'org.mockito:mockito-core:2.7.11'
-    compile project(':card.io')
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.robolectric:robolectric:4.3'
+    testImplementation 'org.mockito:mockito-core:3.1.0'
+    implementation project(':card.io')
 }
 
 /* maven release */

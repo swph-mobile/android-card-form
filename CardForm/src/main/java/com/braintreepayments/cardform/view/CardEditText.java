@@ -1,7 +1,7 @@
 package com.braintreepayments.cardform.view;
 
 import android.content.Context;
-import android.support.v4.widget.TextViewCompat;
+import androidx.core.widget.TextViewCompat;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputFilter.LengthFilter;
