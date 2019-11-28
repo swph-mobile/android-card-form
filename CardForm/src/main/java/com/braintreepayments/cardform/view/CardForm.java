@@ -288,6 +288,7 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
 //                mCardNumber.focusNextView();
 
                 mOnCardFormScanListener.onCardFormScan();
+                mOnCardFormScanListener.onScanCardResult(scanResult.cardNumber);
             }
 
             if (scanResult.isExpiryValid() && mExpirationRequired) {
