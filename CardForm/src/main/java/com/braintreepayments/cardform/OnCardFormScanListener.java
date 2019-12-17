@@ -6,4 +6,6 @@ package com.braintreepayments.cardform;
 public interface OnCardFormScanListener {
 
     void onCardFormScan();
+
+    void onScanCardResult(String cardNumber);
 }
