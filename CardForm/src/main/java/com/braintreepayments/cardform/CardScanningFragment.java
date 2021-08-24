@@ -10,8 +10,6 @@ import android.util.Log;
 import com.braintreepayments.cardform.utils.ColorUtils;
 import com.braintreepayments.cardform.view.CardForm;
 
-import io.card.payment.CardIOActivity;
-
 public class CardScanningFragment extends Fragment {
 
     private static final int CARD_IO_REQUEST_CODE = 12398;
@@ -44,18 +42,6 @@ public class CardScanningFragment extends Fragment {
         setRetainInstance(true);
 
        if (mCardForm != null) {
-            Intent scanIntent = new Intent(getActivity(), CardIOActivity.class)
-                    .putExtra(CardIOActivity.EXTRA_HIDE_CARDIO_LOGO, true)
-                    .putExtra(CardIOActivity.EXTRA_USE_PAYPAL_ACTIONBAR_ICON, false)
-                    .putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, true)
-                    .putExtra(CardIOActivity.EXTRA_SCAN_EXPIRY, true)
-                    .putExtra(CardIOActivity.EXTRA_REQUIRE_CVV, false)
-                    .putExtra(CardIOActivity.EXTRA_REQUIRE_POSTAL_CODE, false)
-                    .putExtra(CardIOActivity.EXTRA_GUIDE_COLOR,
-                            getResources().getColor(R.color.bt_white))
-                    .putExtra(CardIOActivity.EXTRA_TOOLBAR_COLOR, mCardForm.getToolbarColor());
-
-            startActivityForResult(scanIntent, CARD_IO_REQUEST_CODE);
         }
 
     }

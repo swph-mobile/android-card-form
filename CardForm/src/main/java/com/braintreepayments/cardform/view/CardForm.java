@@ -37,9 +37,6 @@ import com.braintreepayments.cardform.view.CardEditText.OnCardTypeChangedListene
 import java.util.ArrayList;
 import java.util.List;
 
-import io.card.payment.CardIOActivity;
-import io.card.payment.CreditCard;
-
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 
@@ -261,11 +258,7 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
      * @return {@code true} if available, {@code false} otherwise.
      */
     public boolean isCardScanningAvailable() {
-        try {
-            return CardIOActivity.canReadCardWithCamera();
-        } catch (NoClassDefFoundError e) {
-            return false;
-        }
+        return false;
     }
 
     /**
@@ -280,22 +273,6 @@ public class CardForm extends LinearLayout implements OnCardTypeChangedListener,
     }
 
     public void handleCardIOResponse(Intent data) {
-        if (data != null && data.hasExtra(CardIOActivity.EXTRA_SCAN_RESULT)) {
-            CreditCard scanResult = data.getParcelableExtra(CardIOActivity.EXTRA_SCAN_RESULT);
-
-            if (mCardNumberRequired) {
-                mCardNumber.setText(scanResult.cardNumber);
-//                mCardNumber.focusNextView();
-
-                mOnCardFormScanListener.onCardFormScan();
-                mOnCardFormScanListener.onScanCardResult(scanResult.cardNumber);
-            }
-
-            if (scanResult.isExpiryValid() && mExpirationRequired) {
-                mExpiration.setText(Integer.toString(scanResult.expiryMonth) + Integer.toString(scanResult.expiryYear));
-//                mExpiration.focusNextView();
-            }
-        }
     }
 
     private void setListeners(final EditText editText) {
