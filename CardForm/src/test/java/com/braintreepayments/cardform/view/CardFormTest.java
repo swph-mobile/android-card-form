@@ -32,9 +32,6 @@ import org.robolectric.util.ActivityController;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import io.card.payment.CardIOActivity;
-import io.card.payment.CreditCard;
-
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static com.braintreepayments.cardform.test.Assertions.assertIconHintIs;
