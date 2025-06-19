@@ -29,6 +29,9 @@ android {
     }
 
     resourcePrefix 'bt_'
+    buildFeatures {
+        buildConfig true
+    }
 }
 
 dependencies {
